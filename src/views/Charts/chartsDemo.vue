@@ -1,20 +1,25 @@
 <template>
   <div style="margin: 16px">
     <a-row :gutter="24">
-      <a-col :sm="24" :md="24" :xl="24" :style="{ marginBottom: '24px' }">
+      <!-- <a-col :sm="24" :md="24" :xl="12" :style="{ marginBottom: '24px' }">
         <a-card title="表1">
-            <simple-charts :option="chart.salesOption" style="height: 600px;"/>
+            <simple-charts :option="chart.salesOption" style="height: 400px;"/>
+        </a-card>
+      </a-col> -->
+      <a-col :sm="24" :md="24" :xl="24" :style="{ marginBottom: '24px' }">
+        <a-card title="表2">
+            <simple-charts :option="chart.salesOption" style="height: 450px;"/>
         </a-card>
       </a-col>
     </a-row>
 
-    <a-row :gutter="24">
+    <!-- <a-row :gutter="24">
       <a-col :sm="24" :md="24" :xl="24" :style="{ marginBottom: '24px' }">
         <a-card title="表2">
             <simple-charts :option="chart.pieOption" style="height: 600px;"/>
         </a-card>
       </a-col>
-    </a-row>
+    </a-row> -->
   </div>
 </template>
 <script>
@@ -42,18 +47,20 @@ export default {
   
   xAxis: {
   name: '日期',
-  type: 'time',
+  type: 'category',
+
   splitLine:{
    show:true,
  }},
  title:{
-    text: "《鱿鱼游戏》评论个数时间分布",
+    text: "吃瓜评论时间分布",
     left: 'center',
     top: 10,
-    subtext:'公众号：《小张Python》',
+    subtext:'公众号：《程序员大飞》',
  },
   yAxis: {
   name: '评论个数',
+
   splitLine:{
    show:true,
  }
@@ -87,23 +94,7 @@ export default {
     {
       // symbolSize: 20,
       itemStyle: itemStyle,
-      data: [
-        ['2021-09-17',15],
-        ['2021-09-18',21],
-        ['2021-09-19',16],
-        ['2021-09-20',27],
-        ['2021-09-21',16],
-        ['2021-09-22',12],
-        ['2021-09-23',16],
-        ['2021-09-24',9],
-        ['2021-09-25',16],
-        ['2021-09-26',14],
-        ['2021-09-27',12],
-        ['2021-09-28',15],
-        ['2021-09-29',13],
-        ['2021-09-30',7],
-        ['2021-10-01',2],
-      ],
+      data: [['2021-12-17 23:00:00', 103], ['2021-12-18 00:00:00', 35], ['2021-12-18 01:00:00', 6], ['2021-12-18 02:00:00', 2], ['2021-12-18 03:00:00', 1], ['2021-12-18 05:00:00', 2], ['2021-12-18 06:00:00', 2], ['2021-12-18 07:00:00', 1], ['2021-12-18 08:00:00', 1], ['2021-12-18 09:00:00', 1], ['2021-12-18 13:00:00', 1], ['2021-12-18 14:00:00', 1], ['2021-12-18 16:00:00', 1], ['2021-12-18 19:00:00', 1], ['2021-12-20 00:00:00', 100]],
       type: 'scatter',
       symbolSize: function(value) {
         return value[1]/0.5;
@@ -117,14 +108,14 @@ export default {
     formatter: '{a} <br/>{b}: {c} ({d}%)'
   },
   title: {
-       text: "《鱿鱼游戏》评论星级分布",
+       text: "《长津湖》评论星级分布",
     left: 'center',
     top: 2,
     subtext:'公众号：《小张Python》',
   },
   legend: {
     top:40,
-    right:30,
+    right:130,
   
     width: 30,
     data: ['五星', '一星', '二星', '三星', '四星']
@@ -170,11 +161,11 @@ export default {
         }
       },
       data: [
-           {value: 24, name: '五星'},
-      {value: 57, name: '四星'},
-      {value: 86, name: '三星'},
-      {value: 16, name: '一星'},
-      {value: 28, name: '二星'},
+        {'value': 36, 'name': '四星'},
+{'value': 96, 'name': '五星'},
+{'value': 50, 'name': '三星'},
+{'value': 2, 'name': '一星'},
+{'value': 25, 'name': '二星'},
       ]
     }
   ]
